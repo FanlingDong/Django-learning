@@ -9,3 +9,6 @@ Basic Django learning log
 
 ### 2) Create a new django project
 ~ django-admin startproject projectName
+
+### 3) Run Django project
+~ python3.9 manage.py runserver
