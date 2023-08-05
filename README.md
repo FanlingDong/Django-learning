@@ -12,3 +12,6 @@ Basic Django learning log
 
 ### 3) Run Django project
 ~ python3.9 manage.py runserver
+
+### 4) Create Django App
+~ python3 manage.py startapp app01
