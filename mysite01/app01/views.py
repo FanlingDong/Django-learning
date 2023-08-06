@@ -32,11 +32,27 @@ def tpl(request):
     ]
     return render(request,
                   'tpl.html',
-                  {"n1": name, 'n2': roles, 'n3': user_info, 'n4':data_list})
+                  {"n1": name, 'n2': roles, 'n3': user_info, 'n4': data_list})
 
 
 def something(request):
     # request是一个对象，封装了用户通过浏览器发来的所以请求相关数据
     # 获取请求方式
     print(request.method)
+
+    # 关于重定向：浏览器被redirect后，把网站发回请求者，请求者再访问新的网站
     return HttpResponse('返回内容')
+
+
+def login(request):
+    if request.method == 'GET':
+        return render(request, "login.html")
+    else:
+        print(request.POST)
+        username = request.POST.get("user")
+        password = request.POST.get("password")
+        if username == 'root' and password == "123":
+            return HttpResponse("登录成功")
+        else:
+            # return HttpResponse("登录失败")
+            return render(request, "login.html", {"error_msg": "Incorrect password"})

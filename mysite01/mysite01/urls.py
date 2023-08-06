@@ -28,4 +28,7 @@ urlpatterns = [
     path('tpl/', views.tpl),
     # 请求和响应
     path('something/', views.something),
+
+    # 用户登录
+    path('login/', views.login),
 ]
